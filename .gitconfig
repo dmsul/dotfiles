@@ -1,0 +1,39 @@
+[user]
+	name = Daniel Sullivan
+	email = sullydm@gmail.com
+[push]
+        default = matching
+[core]
+	excludesfile = ~/.gitignore_global
+        autocrlf = false
+        fileMode = false
+        editor = vim
+[color]
+        ui = true
+[mergetool "fugitive"]
+        cmd = gvim -f -c \"Gdiff\" \"$MERGED\"
+[merge]
+        tool = fugitive
+[difftool]
+	prompt = false
+[difftool "fugitive"]
+        cmd = gvim \"$LOCAL\" -d \"$REMOTE\"
+[diff]
+        tool = fugitive
+[alias]
+        st = status
+        ci = commit
+        ch = checkout
+        br = branch -vva
+        ln = log --graph -n
+        lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold yellow)%d%C(reset) %C(white)%s%C(reset)' --all
+        lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+        lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+        lg3 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+        lg4 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold yellow)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+[credential]
+        helper = wincred
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true

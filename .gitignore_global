@@ -1,0 +1,7 @@
+*.pyc
+*.csv
+*.xls
+*.err
+*.out
+*.log
+.ropeproject
