@@ -1,0 +1,15 @@
+{
+  "default_hour": 12, 
+  "linewrap": 79, 
+  "encrypt": false, 
+  "default_minute": 0, 
+  "tagsymbols": "@", 
+  "editor": "", 
+  "timeformat": "%Y-%m-%d %H:%M", 
+  "highlight": true, 
+  "journals": {
+    "default": "~/Dropbox/Docs/jrnl_files/work_journal.txt", 
+    "poll-house": "~/Dropbox/Docs/jrnl_files/jrnl_poll-house.txt",
+    "personal": "~/Dropbox/Docs/jrnl_files/journal.txt"
+  }
+}
