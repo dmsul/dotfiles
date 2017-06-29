@@ -1,0 +1,77 @@
+# LyX 2.1.1 generated this file. If you want to make your own
+# modifications you should do them from inside LyX and save.
+
+Format 15
+
+
+#
+# MISC SECTION ######################################
+#
+
+\path_prefix "$LyXDir/bin;$LyXDir/Python;$LyXDir/Python/Lib;$LyXDir/Perl/bin;$LyXDir/imagemagick;C:/texlive/2014/bin/win32;;C:/Program Files (x86)/Vim/vim74;C:/Program Files (x86)/LyX 2.1/ghostscript/bin;C:/Program Files (x86)/SumatraPDF"
+\serverpipe "\\.\pipe\lyxpipe"
+\user_email ""
+
+#
+# SCREEN & FONTS SECTION ############################
+#
+
+\screen_font_sizes 5 7 8 9 10 12 14.4 17.260000000000002 20.739999999999998 24.879999999999999
+\fullscreen_scrollbar false
+\single_instance false
+
+#
+# COLOR SECTION ###################################
+#
+
+
+#
+# PRINTER SECTION ###################################
+#
+
+
+#
+# TEX SECTION #######################################
+#
+
+
+#
+# FILE SECTION ######################################
+#
+
+
+#
+# PLAIN TEXT EXPORT SECTION ##############################
+#
+
+
+#
+# SPELLCHECKER SECTION ##############################
+#
+
+
+#
+# LANGUAGE SUPPORT SECTION ##########################
+#
+
+
+#
+# 2nd MISC SUPPORT SECTION ##########################
+#
+
+
+#
+# FORMATS SECTION ##########################
+#
+
+\format "pdf2" "pdf" "PDF (pdflatex)" "F" "SumatraPDF -reuse-instance -inverse-search \"lyxeditor.cmd \\\"%f\\\" \\\"%l\\\"\"" "" "document,vector,menu=export" "application/pdf"
+
+#
+# CONVERTERS SECTION ##########################
+#
+
+
+#
+# COPIERS SECTION ##########################
+#
+
