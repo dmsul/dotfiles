@@ -53,6 +53,8 @@ filetype off
 
   Plug 'majutsushi/tagbar'
 
+  Plug 'dmsul/vim-stata'
+
   call plug#end()
 
 filetype plugin indent on
