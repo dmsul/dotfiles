@@ -14,7 +14,7 @@ mklink _vimrc %DOTS%\_vimrc
 setx /M PATH "C:\Program Files\Vim\vim80;%PATH%"
 REM Vim-plug (plugin manager, will download the rest, requires git)
 if not exist "vimfiles/autoload" mkdir "vimfiles/autoload"
-Powershell.exe -executionpolicy remotesigned -File %DOTS%\get_vimplug.ps1
+Powershell.exe -executionpolicy remotesigned -File %DOTS%\env_scripts\get_vimplug.ps1
 REM SumatraPDF in PATH
 setx /M PATH "%PATH%;C:\Program Files\SumatraPDF"
 
