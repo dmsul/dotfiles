@@ -7,4 +7,4 @@ alias ll="ls -l"
 # So `latexmk` uses system perl instead of msys perl
 export PATH=/c/Strawberry/perl/bin:$PATH
 # So git bash uses system vim
-export PATH="/c/Program Files/Vim/vim74":$PATH
+export PATH="/c/Program Files/vim/vim80":$PATH
