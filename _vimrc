@@ -124,9 +124,7 @@ filetype plugin indent on
     \ . '\"+\%l|normal zzzv|'
     \ . 'call remote_foreground('''.v:servername.''')\"'
     \ . ' \"\%f\""'
-  let g:vimtex_latexmk_continuous = 0
-  let g:vimtex_latexmk_options = ''
-  let g:vimtex_latexmk_background = 1
+  let g:vimtex_compiler_latexmk = {'continuous': 0, 'background': 0}
   let g:vimtex_fold_enabled = 1
 
 " Stata
