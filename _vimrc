@@ -44,7 +44,7 @@ filetype off
 
   " Plug 'godlygeek/tabular'
 
-  Plug 'scrooloose/syntastic'
+  Plug 'w0rp/ale'
   " Plug 'davidhalter/jedi-vim'
   
   Plug 'tmhedberg/SimpylFold'               " Python folding (I don't like it)
@@ -73,14 +73,12 @@ filetype plugin indent on
   let g:UltiSnipsJumpForwardTrigger="<c-a>"
   let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" Syntastic
-  let g:syntastic_tex_checkers = []
-  let g:syntastic_python_checkers = ["flake8"]
-  let g:syntastic_python_flake8_args = '--ignore=E302,E226,E116'
-      " Num lines between functions, indented comments
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list = 1     " Auto open and close lower window (loc list)
-  let g:syntastic_check_on_wq = 0       " Don't lint when quitting
+" ALE (syntax checker)
+  let g:ale_linters = {
+              \ 'python': ['flake8'],
+              \}
+  let g:airline#extensions#ale#enabled = 1
+  let g:ale_python_flake8_options = '--ignore=E302,E226,E116'
 
 " Polyglot
   let g:polyglot_disabled = ['python', 'latex', 'tex']
