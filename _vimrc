@@ -74,11 +74,16 @@ filetype plugin indent on
   let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " ALE (syntax checker)
+" NOTE: This ALE stuff doesn't work on windows apparently? need to go back to
+" previous commit. See https://github.com/w0rp/ale/issues/549
+  let g:ale_enabled = 1
+  let g:ale_line_on_enter = 0
+  let g:ale_lint_on_text_changed = 'never'
   let g:ale_linters = {
-              \ 'python': ['flake8'],
+              \ 'python': ['flake8', 'pylint'],
               \}
   let g:airline#extensions#ale#enabled = 1
-  let g:ale_python_flake8_options = '--ignore=E302,E226,E116'
+  " let g:ale_python_flake8_options = '--ignore=E302,E226,E116'
 
 " Polyglot
   let g:polyglot_disabled = ['python', 'latex', 'tex']
