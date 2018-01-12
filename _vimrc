@@ -83,7 +83,7 @@ filetype plugin indent on
               \ 'python': ['flake8', 'pylint'],
               \}
   let g:airline#extensions#ale#enabled = 1
-  " let g:ale_python_flake8_options = '--ignore=E302,E226,E116'
+  let g:ale_python_flake8_options = '--ignore=E302,E226,E116,E722'
 
 " Polyglot
   let g:polyglot_disabled = ['python', 'latex', 'tex']
