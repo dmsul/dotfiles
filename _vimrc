@@ -80,10 +80,11 @@ filetype plugin indent on
   let g:ale_line_on_enter = 0
   let g:ale_lint_on_text_changed = 'never'
   let g:ale_linters = {
-              \ 'python': ['flake8', 'pylint'],
+              \ 'python': ['flake8'],
               \}
   let g:airline#extensions#ale#enabled = 1
   let g:ale_python_flake8_options = '--ignore=E302,E226,E116,E722'
+  " Error codes: ?; ?; ?; Bare 'except'
 
 " Polyglot
   let g:polyglot_disabled = ['python', 'latex', 'tex']
