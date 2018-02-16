@@ -249,7 +249,7 @@ nnoremap <m-i> JgqqI<space><space><Esc>
 nmap <F8> :TagbarToggle<CR>
 let g:airline#extensions#tagbar#enabled = 1
 
-if 0
+if &shell =~ 'bash' && has('win32')
     set shell=cmd
     set shellcmdflag=/c
 endif
