@@ -81,7 +81,9 @@ filetype plugin indent on
   let g:ale_lint_on_text_changed = 'never'
   let g:ale_linters = {
               \ 'python': ['flake8'],
+              \ 'tex': [],
               \}
+  let g:ale_echo_msg_format = '%linter% says %s'
   let g:airline#extensions#ale#enabled = 1
   let g:ale_python_flake8_options = '--ignore=E302,E226,E116,E722'
   " Error codes: ?; ?; ?; Bare 'except'
@@ -128,7 +130,8 @@ filetype plugin indent on
     \ . '\"+\%l|normal zzzv|'
     \ . 'call remote_foreground('''.v:servername.''')\"'
     \ . ' \"\%f\""'
-  let g:vimtex_compiler_latexmk = {'continuous': 0, 'background': 0}
+  let g:vimtex_latexmk_continuous = 0
+  let g:vimtex_latexmk_background = 1
   let g:vimtex_fold_enabled = 1
 
 " Stata
