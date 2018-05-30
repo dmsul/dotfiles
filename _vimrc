@@ -18,11 +18,10 @@ filetype off
   Plug 'honza/vim-snippets'
 
   Plug 'Valloric/YouCompleteME'
-  
-  " Plug 'vim-latex/vim-latex'
-  " Plug 'LaTeX-Box-Team/LaTeX-Box'
-  Plug 'lervag/vimtex'
 
+  Plug 'w0rp/ale'
+  
+  
   Plug 'tpope/vim-fugitive'
   Plug 'scrooloose/nerdtree'
   Plug 'vim-scripts/TaskList.vim'
@@ -32,6 +31,8 @@ filetype off
 
   " Plug 'nathanaelkane/vim-indent-guides'  " <leader>ig toggles
   Plug 'sjl/gundo.vim'
+
+  Plug 'majutsushi/tagbar'
 
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -44,15 +45,19 @@ filetype off
 
   " Plug 'godlygeek/tabular'
 
-  Plug 'w0rp/ale'
-  " Plug 'davidhalter/jedi-vim'
-  
+  " Latex
+  " Plug 'vim-latex/vim-latex'
+  " Plug 'LaTeX-Box-Team/LaTeX-Box'
+  Plug 'lervag/vimtex'
+
+  " Python
+  Plug 'vim-python/python-syntax'
   Plug 'tmhedberg/SimpylFold'               " Python folding (I don't like it)
   Plug 'hynek/vim-python-pep8-indent'       " python-mode's pep8 indent source
-  Plug 'python-rope/ropevim'
+  " Plug 'python-rope/ropevim'
+  " Plug 'davidhalter/jedi-vim'
 
-  Plug 'majutsushi/tagbar'
-
+  " Stata
   Plug 'dmsul/vim-stata'
 
   call plug#end()
@@ -62,8 +67,8 @@ filetype plugin indent on
 
 " YouCompleteMe
   let g:ycm_python_binary_path = 'python'
-  let g:ycm_autoclose_preview_window_after_completion = 1
-  let g:ycm_autoclose_preview_window_after_insertion = 0    " After leaving insert mode
+  let g:ycm_autoclose_preview_window_after_completion = 0
+  let g:ycm_autoclose_preview_window_after_insertion = 1    " After leaving insert mode
   nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
   nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
   nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
@@ -118,6 +123,9 @@ filetype plugin indent on
   " 'Align' uses '\t' mapping
   " map <leader>d <Plug>TaskList    
   let g:tlTokenList=['FIXME', 'TODO', 'XXX', 'YYY', 'CCC']
+
+" Python
+  let g:python_highlight_all = 1
 
 " LATEX
   let g:vimtex_view_method = 'general'
