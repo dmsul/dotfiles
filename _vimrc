@@ -140,7 +140,7 @@ filetype plugin indent on
 " Tagbar
   nmap <F8> :TagbarToggle<CR>
   let g:airline#extensions#tagbar#enabled = 1
-  let g:tagbar_ctags_bin = 'C:\users\Daniel\proj\ctags\ctags.exe'
+  let g:tagbar_ctags_bin = '~\proj\ctags\ctags.exe'
 
 
 " Python
@@ -178,7 +178,7 @@ if has('gui')
     set guioptions-=m               " Get rid of menu
     set guioptions-=T               " Get rid of buttons
     if has('win32')
-        set rop=type:directx,gamma:1.8,contrast:0.5,level:0.5,geom:1,renmode:5,taamode:1
+        set rop=type:directx,gamma:1.8,contrast:0.5,level:0.5,geom:1,renmode:2,taamode:1
     endif
 endif
 
@@ -206,7 +206,7 @@ set backupcopy=auto             " When overwriting file, save as tmp file,
 
 " Set font and font size
 if has('win32')
-  set guifont=Input:h12:cANSI
+  set guifont=Fira\ Code:h12:cANSI
 else
   set guifont=Ubuntu\ Mono\ 14
 endif
