@@ -9,8 +9,6 @@ filetype off
   endif
   call plug#begin(path)
 
-  " Plug 'klen/python-mode'
-
   Plug 'sheerun/vim-polyglot'           " Collection of syntax highlighting
                                         " type stuff
 
@@ -65,10 +63,24 @@ filetype plugin indent on
   let g:ycm_python_binary_path = 'python'
   let g:ycm_autoclose_preview_window_after_completion = 0
   let g:ycm_autoclose_preview_window_after_insertion = 1    " After leaving insert mode
-    let g:ycm_filetype_specific_completion_to_disable = {
-          \ 'gitcommit': 1,
-          \ 'python': 1
-          \}
+  let g:ycm_filetype_specific_completion_to_disable = {
+        \ 'gitcommit': 1,
+        \ 'python': 1
+        \}
+  let g:ycm_filetype_blacklist = {
+        \ 'tex': 1,
+        \ 'latex': 1,
+        \ 'tagbar' : 1,
+        \ 'qf' : 1,
+        \ 'notes' : 1,
+        \ 'markdown' : 1,
+        \ 'unite' : 1,
+        \ 'text' : 1,
+        \ 'vimwiki' : 1,
+        \ 'pandoc' : 1,
+        \ 'infolog' : 1,
+        \ 'mail' : 1
+        \}
   " nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
   " nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
   " nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
