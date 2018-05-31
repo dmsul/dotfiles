@@ -65,6 +65,10 @@ filetype plugin indent on
   let g:ycm_python_binary_path = 'python'
   let g:ycm_autoclose_preview_window_after_completion = 0
   let g:ycm_autoclose_preview_window_after_insertion = 1    " After leaving insert mode
+    let g:ycm_filetype_specific_completion_to_disable = {
+          \ 'gitcommit': 1,
+          \ 'python': 1
+          \}
   " nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
   " nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
   " nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
