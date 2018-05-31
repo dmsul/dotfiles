@@ -9,38 +9,40 @@ filetype off
   endif
   call plug#begin(path)
 
+  Plug 'Valloric/YouCompleteME'
+  Plug 'w0rp/ale'
+
+  Plug 'tpope/vim-fugitive'
+
   Plug 'sheerun/vim-polyglot'           " Collection of syntax highlighting
                                         " type stuff
 
   Plug 'SirVer/ultisnips'               " See 'honza/vim-snippets' for actual snippets
   Plug 'honza/vim-snippets'
 
-  Plug 'Valloric/YouCompleteME'
-
-  Plug 'w0rp/ale'
-  
-  Plug 'tpope/vim-fugitive'
   Plug 'scrooloose/nerdtree'
   Plug 'vim-scripts/TaskList.vim'
+  Plug 'majutsushi/tagbar'
+  Plug 'ctrlpvim/ctrlp.vim'
+
   " Plug 'Lokaltog/vim-easymotion'
   " Plug 'tpope/vim-surround'
-  Plug 'ctrlpvim/ctrlp.vim'
+  " Plug 'godlygeek/tabular'
 
   " Plug 'nathanaelkane/vim-indent-guides'  " <leader>ig toggles
   Plug 'sjl/gundo.vim'
 
-  Plug 'majutsushi/tagbar'
 
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  " Plug 'junegunn/seoul256.vim'
-  Plug 'nanotech/jellybeans.vim'
-  Plug 'altercation/vim-colors-solarized'
   " Plug 'idbrii/powerline-sanity'
   " Plug 'mhinz/vim-startify'
   " Plug 'bling/vim-bufferline'
 
-  " Plug 'godlygeek/tabular'
+  " Plug 'junegunn/seoul256.vim'
+  Plug 'nanotech/jellybeans.vim'
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'gosukiwi/vim-atom-dark'
 
   " Latex
   Plug 'lervag/vimtex'
@@ -215,8 +217,8 @@ nmap <S-F12> :let &guifont = substitute(&guifont, ':h\(\d\+\)', '\=":h" . (subma
 
 " Colors
 if has('gui')
-    " colorscheme desert
-    colorscheme jellybeans
+    " colorscheme jellybeans
+    colorscheme atom-dark
 endif
 set background=dark
 syntax on
