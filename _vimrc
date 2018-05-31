@@ -210,6 +210,8 @@ if has('win32')
 else
   set guifont=Ubuntu\ Mono\ 14
 endif
+nmap <F12> :let &guifont = substitute(&guifont, ':h\(\d\+\)', '\=":h" . (submatch(1) - 1)', '')<CR>
+nmap <S-F12> :let &guifont = substitute(&guifont, ':h\(\d\+\)', '\=":h" . (submatch(1) + 1)', '')<CR>
 
 " Colors
 if has('gui')
