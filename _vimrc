@@ -18,11 +18,9 @@ filetype off
   Plug 'honza/vim-snippets'
 
   Plug 'Valloric/YouCompleteME'
-  
-  " Plug 'vim-latex/vim-latex'
-  " Plug 'LaTeX-Box-Team/LaTeX-Box'
-  Plug 'lervag/vimtex'
 
+  Plug 'w0rp/ale'
+  
   Plug 'tpope/vim-fugitive'
   Plug 'scrooloose/nerdtree'
   Plug 'vim-scripts/TaskList.vim'
@@ -32,6 +30,8 @@ filetype off
 
   " Plug 'nathanaelkane/vim-indent-guides'  " <leader>ig toggles
   Plug 'sjl/gundo.vim'
+
+  Plug 'majutsushi/tagbar'
 
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -44,49 +44,51 @@ filetype off
 
   " Plug 'godlygeek/tabular'
 
-  Plug 'scrooloose/syntastic'
-  " Plug 'davidhalter/jedi-vim'
-  
+  " Latex
+  Plug 'lervag/vimtex'
+
+  " Python
+  Plug 'vim-python/python-syntax'
   Plug 'tmhedberg/SimpylFold'               " Python folding (I don't like it)
   Plug 'hynek/vim-python-pep8-indent'       " python-mode's pep8 indent source
+  Plug 'davidhalter/jedi-vim'
   Plug 'python-rope/ropevim'
 
-  Plug 'majutsushi/tagbar'
-
+  " Stata
   Plug 'dmsul/vim-stata'
 
   call plug#end()
 
 filetype plugin indent on
-" execute pathogen#infect()
 
 " YouCompleteMe
   let g:ycm_python_binary_path = 'python'
-  let g:ycm_autoclose_preview_window_after_completion = 1
-  let g:ycm_autoclose_preview_window_after_insertion = 0    " After leaving insert mode
-  nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
-  nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
-  nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
+  let g:ycm_autoclose_preview_window_after_completion = 0
+  let g:ycm_autoclose_preview_window_after_insertion = 1    " After leaving insert mode
+  " nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
+  " nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
+  " nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 
 " UltiSnips
-  let g:UltiSnipsExpandTrigger="<c-a>"            " XXX Does this still break YCM?
+  let g:UltiSnipsExpandTrigger="<c-a>"
   let g:UltiSnipsJumpForwardTrigger="<c-a>"
   let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" Syntastic
-  let g:syntastic_tex_checkers = []
-  let g:syntastic_python_checkers = ["flake8"]
-  let g:syntastic_python_flake8_args = '--ignore=E302,E226,E116'
-      " Num lines between functions, indented comments
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list = 1     " Auto open and close lower window (loc list)
-  let g:syntastic_check_on_wq = 0       " Don't lint when quitting
+" ALE (syntax checker)
+  let g:ale_enabled = 1
+  let g:ale_line_on_enter = 0
+  let g:ale_lint_on_text_changed = 'never'
+  let g:ale_linters = {
+              \ 'python': ['flake8', 'mypy'],
+              \ 'tex': [],
+              \}
+  let g:ale_echo_msg_format = '%linter% says %s'
+  let g:airline#extensions#ale#enabled = 1
+  let g:ale_python_flake8_options = '--ignore=E302,E226,E116,E722'
+  " Error codes: ?; ?; ?; Bare 'except'
 
 " Polyglot
   let g:polyglot_disabled = ['python', 'latex', 'tex']
-
-" SimpylFold
-  let g:SimpylFold_fold_import = 0
 
 " AIRLINE
   let g:airline#extensions#whitespace#enabled = 0
@@ -94,6 +96,8 @@ filetype plugin indent on
   let g:airline_theme = 'hybrid'
   let g:airline#extensions#tabline#enabled = 0
   set encoding=utf-8
+  let g:airline_left_sep=''
+  let g:airline_right_sep=''
   if has('gui')
       let g:airline_powerline_fonts = 1
   else
@@ -107,11 +111,26 @@ filetype plugin indent on
 
 " NERDTree
   let g:NERDTreeIgnore=['.*\.pyc']
+  map <C-n> :NERDTreeToggle<CR>
 
 " Tasklist
   " 'Align' uses '\t' mapping
   " map <leader>d <Plug>TaskList    
   let g:tlTokenList=['FIXME', 'TODO', 'XXX', 'YYY', 'CCC']
+
+" Gundo
+  nnoremap <F4> :GundoToggle<CR>
+
+" Tagbar
+  nmap <F8> :TagbarToggle<CR>
+  let g:airline#extensions#tagbar#enabled = 1
+  let g:tagbar_ctags_bin = 'C:\users\Daniel\proj\ctags\ctags.exe'
+
+
+" Python
+  let g:python_highlight_all = 1
+  let g:jedi#popup_on_dot = 0
+  let g:SimpylFold_fold_import = 0
 
 " LATEX
   let g:vimtex_view_method = 'general'
@@ -124,14 +143,19 @@ filetype plugin indent on
     \ . '\"+\%l|normal zzzv|'
     \ . 'call remote_foreground('''.v:servername.''')\"'
     \ . ' \"\%f\""'
-  let g:vimtex_compiler_latexmk = {'continuous': 0, 'background': 0}
+  let g:vimtex_compiler_latexmk = {
+    \ 'background' : 1,
+    \ 'continuous' : 0,
+    \}
   let g:vimtex_fold_enabled = 1
+  "
+  " Latex only! Hang indent the next line
+          " I need <c-i> for jumplist
+  nnoremap <m-i> JgqqI<space><space><Esc>         
+  " nnoremap <m-i> JgqqI<space><space><Esc>gqj
 
 " Stata
   autocmd BufRead,BufNewFile *.do setlocal foldmethod=syntax
-
-" NERDTree
-  map <C-n> :NERDTreeToggle<CR>
 
 " Display
 if has('gui')
@@ -234,18 +258,7 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 nnoremap <c-h> <c-w>h
 
-" Gundo
-nnoremap <F4> :GundoToggle<CR>
-
-" Latex only! Hang indent the next line
-        " I need <c-i> for jumplist
-nnoremap <m-i> JgqqI<space><space><Esc>         
-" nnoremap <m-i> JgqqI<space><space><Esc>gqj
-
-nmap <F8> :TagbarToggle<CR>
-let g:airline#extensions#tagbar#enabled = 1
-
-if has('win32')
+if &shell =~ 'bash' && has('win32')
     set shell=cmd
     set shellcmdflag=/c
 endif
