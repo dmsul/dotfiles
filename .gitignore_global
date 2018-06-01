@@ -5,3 +5,4 @@
 *.out
 *.log
 .ropeproject
+.mypy_cache/*
