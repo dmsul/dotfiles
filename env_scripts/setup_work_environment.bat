@@ -11,7 +11,7 @@ mklink .gitignore_global %DOTS%\.gitignore_global
 
 REM Vim
 mklink _vimrc %DOTS%\_vimrc
-setx /M PATH "C:\Program Files\Vim\vim80;%PATH%"
+setx /M PATH "C:\Program Files\Vim\vim81;%PATH%"
 REM Vim-plug (plugin manager, will download the rest, requires git)
 if not exist "vimfiles/autoload" mkdir "vimfiles/autoload"
 Powershell.exe -executionpolicy remotesigned -File %DOTS%\env_scripts\get_vimplug.ps1

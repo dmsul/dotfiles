@@ -5,7 +5,7 @@
         default = matching
 [core]
 	excludesfile = ~/.gitignore_global
-        autocrlf = false
+	autocrlf = false
         fileMode = false
         editor = vim
 [color]
