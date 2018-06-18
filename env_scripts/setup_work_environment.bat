@@ -25,6 +25,7 @@ REM Python
 if not exist ".\.ipython" ipython profile create
 mklink .ipython\profile_default\ipython_config.py "%DOTS%\ipython_config.py"
 mklink matplotlibrc %DOTS%\matplotlibrc
+mklink .condarc %DOTS%\.condarc
 
 REM C compiler batch file
 REM $vcvarscommand = "\"c:\users\daniel\appdata\local\Programs\Common\Microsoft\Visual C++ for Python\9.0\vcvarsall.bat\" x64"
