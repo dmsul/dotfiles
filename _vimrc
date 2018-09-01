@@ -52,7 +52,7 @@ filetype off
   Plug 'vim-python/python-syntax'
   Plug 'tmhedberg/SimpylFold'               " Python folding (I don't like it)
   Plug 'hynek/vim-python-pep8-indent'       " python-mode's pep8 indent source
-  Plug 'davidhalter/jedi-vim'
+  " Plug 'davidhalter/jedi-vim'
   Plug 'python-rope/ropevim'
 
   " Stata
