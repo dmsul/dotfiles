@@ -68,7 +68,7 @@ filetype plugin indent on
   let g:ycm_autoclose_preview_window_after_insertion = 1    " After leaving insert mode
   let g:ycm_filetype_specific_completion_to_disable = {
         \ 'gitcommit': 1,
-        \ 'python': 1
+        \ 'python': 0
         \}
   let g:ycm_filetype_blacklist = {
         \ 'tex': 1,
@@ -215,7 +215,7 @@ set backupcopy=auto             " When overwriting file, save as tmp file,
 
 " Set font and font size
 if has('win32')
-  set guifont=Fira\ Code:h12:cANSI
+  set guifont=Fira\ Code\ Retina:h12:cANSI
 else
   set guifont=Ubuntu\ Mono\ 14
 endif
