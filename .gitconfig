@@ -5,9 +5,11 @@
         default = matching
 [core]
 	excludesfile = ~/.gitignore_global
-	autocrlf = false
+        autocrlf = false
         fileMode = false
         editor = vim
+	whitespace = cr-at-eol      # https://stackoverflow.com/questions/1889559/git-diff-to-ignore-m
+        pager = "diff-so-fancy-win | less --tabs=4 -RFX"
 [color]
         ui = true
 [mergetool "fugitive"]
@@ -37,3 +39,5 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	required = true
+[color "diff"]
+	meta = yellow
