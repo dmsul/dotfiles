@@ -84,7 +84,7 @@ filetype plugin indent on
         \ 'infolog' : 1,
         \ 'mail' : 1
         \}
-  " nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
+  nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
   " nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
   " nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 
