@@ -9,4 +9,4 @@ export PATH=/c/Strawberry/perl/bin:$PATH
 # So git bash uses system vim
 export PATH="/c/Program Files/vim/vim81":$PATH
 
-alias gitmm="git branch | grep \* | cut -d ' ' -f2 | xargs -I {} bash -c 'git ch master && git merge -no-ff {} && git branch -d {}' "
+alias gitmm="git branch | grep \* | cut -d ' ' -f2 | xargs -I {} bash -c 'git ch master && git merge --no-ff {} && git branch -d {}' "
