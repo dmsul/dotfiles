@@ -6,3 +6,4 @@
 *.log
 .ropeproject
 .mypy_cache/
+*egg-info*
