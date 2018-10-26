@@ -17,7 +17,7 @@ sudo chmod a+x /srv/nominatim
 
 # Configure PostgreSQL
 
-sudo cp ~/dotfiles/postgresql.conf_pretune /etc/postgresql/10/main/postgresql.conf
+sudo cp ~/dotfiles/nominatim/postgresql.conf_pretune /etc/postgresql/10/main/postgresql.conf
 sudo pg_ctlcluster 10 main restart
 
 sudo systemctl restart postgresql
