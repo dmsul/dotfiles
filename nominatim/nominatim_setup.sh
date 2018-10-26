@@ -10,15 +10,15 @@ sudo apt-get install -y build-essential cmake g++ libboost-dev libboost-system-d
                         apache2 php php-pgsql libapache2-mod-php php-pear php-db \
                         php-intl git
 
-# sudo useradd -d /srv/nominatim -s /bin/bash -m nominatim
-# sudo passwd nominatim
+sudo useradd -d /srv/nominatim -s /bin/bash -m nominatim
+sudo passwd nominatim
 
 sudo chmod a+x /srv/nominatim
 
 # Configure PostgreSQL
 
-# sudo cp ~/dotfiles/postgresql.conf_pretune /etc/postgresql/10/main/postgresql.conf
-# sudo pg_ctlcluster 10 main restart
+sudo cp ~/dotfiles/postgresql.conf_pretune /etc/postgresql/10/main/postgresql.conf
+sudo pg_ctlcluster 10 main restart
 
 sudo systemctl restart postgresql
 
@@ -55,7 +55,6 @@ sudo make
 sudo tee settings/local.php << EOF
 <?php
  @define('CONST_Website_BaseURL', '/nominatim/');
- >
 EOF
 
 
