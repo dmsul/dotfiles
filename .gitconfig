@@ -39,3 +39,8 @@
 	required = true
 [color "diff"]
 	meta = yellow
+[difftool "sourcetree"]
+	cmd = '' \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
