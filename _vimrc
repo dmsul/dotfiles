@@ -48,7 +48,7 @@ filetype off
   Plug 'gosukiwi/vim-atom-dark'
 
   " Latex
-  Plug 'lervag/vimtex'
+  " Plug 'lervag/vimtex'
 
   " Python
   Plug 'vim-python/python-syntax'
@@ -220,7 +220,7 @@ set backupcopy=auto             " When overwriting file, save as tmp file,
 
 " Set font and font size
 if has('win32')
-  set guifont=Fira\ Code\ Retina:h12:cANSI
+  set guifont=Fira\ Code\ Retina:h10:cANSI
 else
   set guifont=Ubuntu\ Mono\ 14
 endif
