@@ -9,7 +9,7 @@
   "highlight": true, 
   "journals": {
     "default": "~/Dropbox/Docs/jrnl_files/work_journal.txt", 
-    "leads": "~/Dropbox/Docs/jrnl_files/leads.txt"
+    "leads": "~/Dropbox/Docs/jrnl_files/leads.txt",
     "reading": "~/Dropbox/Docs/jrnl_files/reading.txt"
   }
 }
