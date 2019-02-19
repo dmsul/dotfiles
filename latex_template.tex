@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+
+% General Formatting
+\usepackage[T1]{fontenc}
+\usepackage[utopia]{mathdesign}
+\usepackage{setspace}           % For \onehalfspacing etc.
+\usepackage[margin=1.3in]{geometry}
+\usepackage{microtype}
+\usepackage[compact]{titlesec}
+
+\makeatletter                   % Jury rig a good ragged right with parindent
+\newcommand\iraggedright{%
+  \let\\\@centercr\@rightskip\@flushglue \rightskip\@rightskip
+  \leftskip\z@skip}
+\makeatother
+
+\makeatletter                   % Utopia font doesn't have the right * symbol
+\renewcommand*{\@fnsymbol}[1]{\ifcase#1\or*\else\@arabic{#1}\fi}
+\makeatother
+
+% BibLaTex/citations
+\PassOptionsToPackage{natbib}{biblatex-chicago}
+\input{biblatex-aer}    % In ~/texmf
+%\usepackage{csquotes}   % biblatex really likes this
+\addbibresource{hotspots_ref.bib}
+
+% Linking
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\hypersetup{pdfpagemode=UseNone}
+\urlstyle{same}                     % Use std typeface in URL's
+
+\usepackage[nameinlink]{cleveref}   % Better than 'autoref'; load after amsthm
+
+% Figures
+\usepackage{graphicx}
+
+% Tables
+\usepackage[flushleft]{threeparttable}
+\usepackage{booktabs}
+
+% Chemestry shortcuts
+\usepackage{xspace}
+\newcommand{\nox}{NO$_{\mathrm{x}}$\xspace}
+\newcommand{\sox}{SO$_{\mathrm{x}}$\xspace}
+
+\usepackage[detect-mode=true, group-minimum-digits=4, group-separator={,}]{siunitx}
+\newcommand{\mgmt}{\si{\micro\gram/\cubic\meter}\xspace}
+
+
+% Front matter
+\title{TITLE}
+\author{Daniel M. Sullivan\\Resources for the Future}
+\date{\today%
+    \thanks{%
+        Email: \url{sullivan@rff.org}.
+    }%
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}\noindent
+    ABSTRACT!
+\end{abstract}
+
+\clearpage
+\iraggedright
+\onehalfspacing
+
+\end{document}
