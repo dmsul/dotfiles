@@ -186,7 +186,9 @@ filetype plugin indent on
 if has('gui')
     set guioptions-=m               " Get rid of menu
     set guioptions-=T               " Get rid of buttons
-    set guioptions+=k               " Don't resize window when adding scrollbar (no jumps!)
+    set guioptions-=r               " No right-hand scroll
+    set guioptions-=L               " No left-hand scroll w/ vsplit
+                                    " See https://vi.stackexchange.com/a/6336
     if has('win32')
         set rop=type:directx,gamma:1.8,contrast:0.5,level:0.5,geom:1,renmode:2,taamode:1
     endif
