@@ -1,3 +1,4 @@
 channels:
-    - defaults
-    - conda-forge
+  - defaults
+  - conda-forge
+auto_update_conda: false
