@@ -135,7 +135,7 @@ filetype plugin indent on
   let g:bufferline_echo = 0
 
 " NERDTree
-  let g:NERDTreeIgnore=['.*\.pyc']
+  let g:NERDTreeIgnore=['.*\.pyc', '__pycache__']
   map <C-n> :NERDTreeToggle<CR>
 
 " Tasklist
