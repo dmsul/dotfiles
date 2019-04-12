@@ -105,7 +105,7 @@ filetype plugin indent on
               \}
   let g:ale_echo_msg_format = '%linter% says %s'
   let g:airline#extensions#ale#enabled = 1
-  let g:ale_python_flake8_options = '--ignore=E302,E226,E116,E722,E701,E252'
+  let g:ale_python_flake8_options = '--ignore=E302,E226,E116,E722,E701,E252,W504,W503'
   let g:ale_python_mypy_options = '--ignore-missing-imports'
   " Error codes: ?; ?; ?; Bare 'except'
 
