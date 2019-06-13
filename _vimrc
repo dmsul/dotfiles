@@ -14,11 +14,14 @@ filetype off
   Plug 'Valloric/YouCompleteME'
   Plug 'w0rp/ale'
 
-  Plug 'tpope/vim-fugitive'
-  Plug 'mhinz/vim-signify'
-
   Plug 'sheerun/vim-polyglot'           " Collection of syntax highlighting
                                         " type stuff
+
+
+  Plug 'AndrewRadev/linediff.vim'       " Partial file diffs
+
+  Plug 'tpope/vim-fugitive'             " Git stuff
+  Plug 'mhinz/vim-signify'
 
   Plug 'SirVer/ultisnips'               " See 'honza/vim-snippets' for actual snippets
   Plug 'honza/vim-snippets'
